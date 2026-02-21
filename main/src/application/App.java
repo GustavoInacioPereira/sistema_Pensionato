@@ -1,52 +1,52 @@
-import java.util.Scanner;
+package application;
+
 import entities.Rents;
-import entities.Rooms;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        Rooms[] rooms = new Rooms[10];
-        int quantQuartos = 0;
+        List<Rents> room = new ArrayList<>();
+        int maxQuartosinHotel = 30;
+        int escolhaOpcao;
 
-        do {
-            System.out.println("Quantos quartos deseja Alugar? ");
-            quantQuartos = sc.nextInt();
-            if (quantQuartos < 0) {
-                System.out.println("Quantidade Minima Atingida ");
-            }
-        } while (quantQuartos < 0);
-
+        for (int i = 0; i < maxQuartosinHotel; i++) {
+            room.add(null);
+        }
+        int quantQuartos = QuantQuartos.quantQuartos(maxQuartosinHotel, sc);
         
 
         for (int i = 0; i < quantQuartos; i++) {
-            sc.nextLine(); // Consumir a quebra de linha
-            System.out.println("Nome: ");
-            String name = sc.nextLine();
-            System.out.println("Email: ");
-            String email = sc.nextLine();
-            System.out.println("Numero do Quarto");
-            int numRoom = sc.nextInt();
-            if (rooms[numRoom] != null) {
-                do {
-                    System.out.printf("Quarto ja reservado %nDigite outro quarto: ");
-                    numRoom = sc.nextInt();
-                } while (rooms[numRoom] != null);
-            } 
-
-                Rents rents = new Rents(name, email);
-                rooms[numRoom] = new Rooms(rents);
-                
+            RentRoom.alugaQuarto(sc, room);
         }
 
+        System.out.println("Quartos Alugados com sucesso!!");
+        do {
+            escolhaOpcao = Option.viewOption(sc);
             
+            switch (escolhaOpcao) {
+                case 1:
+                    ViewReserve.viewReserve(room);
+                break;
 
-        
-        System.out.println("Quartos alugados: ");
-        for (int i = 0; i < rooms.length; i++) {  
-            if(rooms[i] != null) {
-                System.out.println(i + " " + rooms[i].getRent().getName() + " " + rooms[i].getRent().getEmail());
-            }
+                case 2:
+                    RentRoom.alugaQuarto(sc, room);
+                break;
+
+                case 3:
+                    RemoveRent.removeRent(sc, room);
+                break;
+
+                case 4:
+                    break;
+
+                default:
+                    break;
         }
-        sc.close();
+        } while(escolhaOpcao != 4);
+     
     }
+
 }
