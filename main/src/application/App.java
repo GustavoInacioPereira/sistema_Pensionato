@@ -10,7 +10,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         List<Rents> room = new ArrayList<>();
         int maxQuartosinHotel = 30;
-        int escolhaOpcao;
+
 
         for (int i = 0; i < maxQuartosinHotel; i++) {
             room.add(null);
@@ -23,30 +23,7 @@ public class App {
         }
 
         System.out.println("Quartos Alugados com sucesso!!");
-        do {
-            escolhaOpcao = Option.viewOption(sc);
-            
-            switch (escolhaOpcao) {
-                case 1:
-                    ViewReserve.viewReserve(room);
-                break;
-
-                case 2:
-                    RentRoom.alugaQuarto(sc, room);
-                break;
-
-                case 3:
-                    RemoveRent.removeRent(sc, room);
-                break;
-
-                case 4:
-                    break;
-
-                default:
-                    break;
-        }
-        } while(escolhaOpcao != 4);
-     
+        Option.viewOption(sc, room);
     }
 
 }
