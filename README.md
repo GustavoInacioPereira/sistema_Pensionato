@@ -28,7 +28,7 @@
 </details>
 
 <details open>
-    <summary><b>Versão 3.0 - Inteligência Temporal e Regras de Negócio (Atual) :</b></summary>
+    <summary><b>Versão 3.0 - Inteligência Temporal e Regras de Negócio (Atual) </b></summary>
     <ul>
         <li>Integração da API <code>java.time</code> (<code>LocalDateTime</code>) para registro preciso de momentos de locação.</li>
         <li>Implementação de Regra de Negócio Encapsulada: Criação do método <code>isOutOfDate()</code> dentro da classe <code>Rents</code>.</li>
