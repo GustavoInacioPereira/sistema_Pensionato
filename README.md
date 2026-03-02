@@ -43,6 +43,14 @@
     <summary><b>Versão 4.0 - Programação Defensiva e Blindagem de I/O (Atual)</b></summary>
     <ul>
         <li><b>Sanitização de Entradas (Try/Catch):</b> Isolamento do motor de leitura (<code>Scanner</code>) em uma classe utilitária (<code>VerifyType</code>) para capturar e tratar <code>InputMismatchException</code>, impedindo falhas críticas por erros de digitação.</li>
+        <li><b>Arquitetura Modular (Separação de Conceitos):</b> Reestruturação completa do projeto em pacotes especialistas para garantir escalabilidade e manutenção clara:
+        <ul>
+            <li><code>entities</code>: Modelos de domínio e regras puras do negócio (DNA do sistema).</li>
+            <li><code>services</code>: Motores de processos operacionais isolados.</li>
+            <li><code>views</code>: Interface de interação e exibição para o usuário final.</li>
+            <li><code>utilities</code>: Ferramentas genéricas e reaproveitáveis de validação de dados.</li>
+        </ul>
+        </li>
         <li><b>Validação Avançada com RegEx:</b> Implementação de Expressões Regulares (<code>Pattern</code> e <code>Matcher</code>) para garantir a integridade absoluta do formato dos e-mails fornecidos.</li>
         <li><b>Prevenção de Falhas Nativas:</b> Construção de "Cercas Lógicas" estritas para bloquear o acesso a índices inexistentes (<code>IndexOutOfBoundsException</code>) antes da consulta à lista dinâmica.</li>
         <li><b>Micro-Loops de Integridade:</b> Refatoração do fluxo de validação (<code>VerifyOption</code>) para impossibilitar a sobrescrita acidental de quartos ocupados, retendo o usuário em um laço infinito até o fornecimento de um dado 100% válido e livre.</li>
