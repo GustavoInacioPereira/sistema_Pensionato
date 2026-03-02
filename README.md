@@ -27,8 +27,8 @@
     </ul>
 </details>
 
-<details open>
-    <summary><b>Versão 3.0 - Inteligência Temporal e Regras de Negócio (Atual) </b></summary>
+<details>
+    <summary><b>Versão 3.0 - Inteligência Temporal e Regras de Negócio</b></summary>
     <ul>
         <li>Integração da API <code>java.time</code> (<code>LocalDateTime</code>) para registro preciso de momentos de locação.</li>
         <li>Implementação de Regra de Negócio Encapsulada: Criação do método <code>isOutOfDate()</code> dentro da classe <code>Rents</code>.</li>
@@ -36,5 +36,16 @@
         <li><b>Delegação de Responsabilidade (Clean Code):</b> A classe <code>App</code> foi totalmente limpa, delegando o controle de fluxo e o menu interativo para a classe <code>Option</code>.</li>
         <li>Evolução da Interface (CLI): Suporte para entrada de datas personalizadas via <code>DateTimeFormatter</code> e alertas de expiração em tempo real.</li>
         <li><b>Conceitos:</b> Manipulação de Datas, Encapsulamento Avançado e Parsing de Strings para Objetos Temporais.</li>
+    </ul>
+</details>
+
+<details open>
+    <summary><b>Versão 4.0 - Programação Defensiva e Blindagem de I/O (Atual)</b></summary>
+    <ul>
+        <li><b>Sanitização de Entradas (Try/Catch):</b> Isolamento do motor de leitura (<code>Scanner</code>) em uma classe utilitária (<code>VerifyType</code>) para capturar e tratar <code>InputMismatchException</code>, impedindo falhas críticas por erros de digitação.</li>
+        <li><b>Validação Avançada com RegEx:</b> Implementação de Expressões Regulares (<code>Pattern</code> e <code>Matcher</code>) para garantir a integridade absoluta do formato dos e-mails fornecidos.</li>
+        <li><b>Prevenção de Falhas Nativas:</b> Construção de "Cercas Lógicas" estritas para bloquear o acesso a índices inexistentes (<code>IndexOutOfBoundsException</code>) antes da consulta à lista dinâmica.</li>
+        <li><b>Micro-Loops de Integridade:</b> Refatoração do fluxo de validação (<code>VerifyOption</code>) para impossibilitar a sobrescrita acidental de quartos ocupados, retendo o usuário em um laço infinito até o fornecimento de um dado 100% válido e livre.</li>
+        <li><b>Conceitos:</b> Tratamento de Exceções, Expressões Regulares (RegEx), Programação Defensiva, Sanitização de Input e Micro-loops Arquiteturais.</li>
     </ul>
 </details>

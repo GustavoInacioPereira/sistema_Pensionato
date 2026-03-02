@@ -1,6 +1,10 @@
 package application;
 
 import entities.Rents;
+import services.RentRoom;
+import utilities.QuantQuartos;
+import views.ViewOption;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,14 +20,8 @@ public class App {
             room.add(null);
         }
         int quantQuartos = QuantQuartos.quantQuartos(maxQuartosinHotel, sc);
-        
-
-        for (int i = 0; i < quantQuartos; i++) {
-            RentRoom.alugaQuarto(sc, room);
-        }
-
-        System.out.println("Quartos Alugados com sucesso!!");
-        Option.viewOption(sc, room);
+        RentRoom.alugaQuarto(sc, room, quantQuartos);  
+        ViewOption.viewOption(sc, room);
     }
 
 }

@@ -1,4 +1,4 @@
-package application;
+package views;
 import entities.Rents;
 import java.util.List;
 

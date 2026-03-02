@@ -1,11 +1,14 @@
-package application;
+package views;
 
 import java.util.List;
 import java.util.Scanner;
 
 import entities.Rents;
+import services.RemoveRent;
+import services.RentRoom;
+import utilities.VerifyOption;
 
-public class Option {
+public class ViewOption {
 
     public static void viewOption(Scanner sc, List<Rents> room) {
 
@@ -13,21 +16,15 @@ public class Option {
         do {
             System.out.printf(
                     "Opções disponiveis: %n1 - Ver Todas as reservas %n2 - Adicionar mais reservas %n3- Excluir uma reserva%n4 - Sair%n");
-            escolhaOpcao = sc.nextInt();
+            escolhaOpcao = VerifyOption.verify(sc, 0, 4);
 
-            while (escolhaOpcao < 0 || escolhaOpcao > 4) {
-                System.out.println("Opção invalida");
-                System.out.printf(
-                        "Opções disponiveis: %n1 - Ver Todas as reservas %n2 - Adicionar mais reservas %n3- Excluir uma reserva%n4 - Sair%n");
-                escolhaOpcao = sc.nextInt();
-            }
 
             switch (escolhaOpcao) {
                 case 1:
                     ViewReserve.viewReserve(room);
                     break;
                 case 2:
-                    RentRoom.alugaQuarto(sc, room);
+                    RentRoom.alugaQuarto(sc, room, 1);
                     break;
                 case 3:
                     RemoveRent.removeRent(sc, room);

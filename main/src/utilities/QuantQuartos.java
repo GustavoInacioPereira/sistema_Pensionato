@@ -1,4 +1,4 @@
-package application;
+package utilities;
 import java.util.Scanner;
 
 public class QuantQuartos {
@@ -7,7 +7,7 @@ public class QuantQuartos {
             int quantQuartos = 0;
           do {
             System.out.println("Quantos quartos deseja alugar? ");
-            quantQuartos = sc.nextInt();
+            quantQuartos = VerifyType.verifyInt(sc);
 
             if(quantQuartos > maxQuartosinHotel) {
                 System.out.printf("Quantidade Acima da disponivel %nDigite quantos quartos deseja alugar:  ");
