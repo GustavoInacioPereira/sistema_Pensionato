@@ -39,8 +39,8 @@
     </ul>
 </details>
 
-<details open>
-    <summary><b>Versão 4.0 - Programação Defensiva e Blindagem de I/O (Atual)</b></summary>
+<details>
+    <summary><b>Versão 4.0 - Programação Defensiva e Blindagem de I/O</b></summary>
     <ul>
         <li><b>Sanitização de Entradas (Try/Catch):</b> Isolamento do motor de leitura (<code>Scanner</code>) em uma classe utilitária (<code>VerifyType</code>) para capturar e tratar <code>InputMismatchException</code>, impedindo falhas críticas por erros de digitação.</li>
         <li><b>Arquitetura Modular (Separação de Conceitos):</b> Reestruturação completa do projeto em pacotes especialistas para garantir escalabilidade e manutenção clara:
@@ -57,3 +57,15 @@
         <li><b>Conceitos:</b> Tratamento de Exceções, Expressões Regulares (RegEx), Programação Defensiva, Sanitização de Input e Micro-loops Arquiteturais.</li>
     </ul>
 </details>
+
+<details open>
+    <summary><b>Versão 4.1 - Clean App e Desacoplamento (Atual)</b></summary>
+    <ul>
+        <li><b>Bootstrapping Minimalista (Clean App):</b> Refatoração extrema da classe principal <code>App.java</code>, reduzindo-a a apenas 5 linhas de instrução. Ela agora atua exclusivamente como ponto de ignição (Bootstrapping), delegando toda a orquestração do programa para os módulos de <i>Services</i> e <i>Views</i>.</li>
+        <li><b>Desacoplamento de Entidades:</b> Extração da lógica de verificação de expiração de datas (<code>VerifyOutOfDate</code>) para fora da Entidade <code>Rents</code>. A entidade voltou a ter responsabilidade única de guardar o estado (dados), enquanto a lógica de tempo limite foi isolada.</li>
+        <li><b>Conceitos:</b> Bootstrapping, Desacoplamento de Lógica de Negócio e Single Responsibility Principle (SRP) aplicado a Entidades.</li>
+    </ul>
+</details>
+
+<hr>
+<p><b>Conceitos Dominados ao Longo do Projeto:</b> Arrays vs Coleções Dinâmicas, Composição de Objetos, Arquitetura em Camadas (MVC-Like), Expressões Regulares (RegEx), Tratamento de Exceções (Try/Catch), Null Safety e Clean Architecture.</p>

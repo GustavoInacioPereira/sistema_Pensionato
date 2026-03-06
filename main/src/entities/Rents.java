@@ -3,10 +3,11 @@ package entities;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import services.VerifyOutOfDate;
+
 public class Rents {
     private String name, email;
-    private LocalDateTime dataLocacao;
-    private int tempoMaximoEstadia = 3; 
+    private LocalDateTime dataLocacao; 
 
     public Rents(String name, String email, LocalDateTime datalocacao) {
         this.name = name;
@@ -26,16 +27,8 @@ public class Rents {
         return dataLocacao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
     }
 
-
     public boolean isOutOfDate () {
-        LocalDateTime dataAtual = LocalDateTime.now();
-        boolean foraData = false;
-        if (dataAtual.isAfter(dataLocacao.plusDays(tempoMaximoEstadia))) {
-            foraData = true;
-        } else {
-            foraData = false;
-        }
-        return foraData;
+        return VerifyOutOfDate.isOutOfDate(dataLocacao);
     }
 
     
