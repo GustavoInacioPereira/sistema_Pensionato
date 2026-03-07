@@ -3,11 +3,8 @@ package services;
 import entities.Rents;
 import utilities.VerifyOption;
 import utilities.VerifyType;
-
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-
 import java.util.Scanner;
 
 public class RentRoom {
@@ -28,11 +25,7 @@ public class RentRoom {
 
                 case 2:
                     System.out.printf("Data da locacao: (dd/MM/yyyy) hh:mm %n");
-                    String dataLocacaoPersonalizada = sc.nextLine();
-                    dataLocacao = LocalDateTime.parse(dataLocacaoPersonalizada,
-                            DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
-                    break;
-                default:
+                    dataLocacao = VerifyType.verifyDateTime(sc);
                     break;
             }
 

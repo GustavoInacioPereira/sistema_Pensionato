@@ -1,5 +1,7 @@
 package utilities;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -30,6 +32,17 @@ public class VerifyType {
                 return num;
             } catch (InputMismatchException e) {
                 sc.nextLine();
+                System.out.println("Valor Inválido");
+            }
+        }
+    }
+    
+    public static LocalDateTime verifyDateTime (Scanner sc) {       
+        while (true) {
+            try {
+                LocalDateTime date = LocalDateTime.parse(sc.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));;
+                return date;
+            } catch (DateTimeParseException e) {
                 System.out.println("Valor Inválido");
             }
         }

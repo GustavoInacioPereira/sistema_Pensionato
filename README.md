@@ -58,12 +58,19 @@
     </ul>
 </details>
 
-<details open>
-    <summary><b>Versão 4.1 - Clean App e Desacoplamento (Atual)</b></summary>
+<details>
+    <summary><b>Versão 4.1 - Clean App e Desacoplamento</b></summary>
     <ul>
         <li><b>Bootstrapping Minimalista (Clean App):</b> Refatoração extrema da classe principal <code>App.java</code>, reduzindo-a a apenas 5 linhas de instrução. Ela agora atua exclusivamente como ponto de ignição (Bootstrapping), delegando toda a orquestração do programa para os módulos de <i>Services</i> e <i>Views</i>.</li>
         <li><b>Desacoplamento de Entidades:</b> Extração da lógica de verificação de expiração de datas (<code>VerifyOutOfDate</code>) para fora da Entidade <code>Rents</code>. A entidade voltou a ter responsabilidade única de guardar o estado (dados), enquanto a lógica de tempo limite foi isolada.</li>
         <li><b>Conceitos:</b> Bootstrapping, Desacoplamento de Lógica de Negócio e Single Responsibility Principle (SRP) aplicado a Entidades.</li>
+    </ul>
+</details>
+
+<details open>
+    <summary><b>Versão 4.1.1 - Tratamento de Erro com datas (Atual)</b></summary>
+    <ul>
+        <li><b>Verificador de Datas:</b> Implementação de um verificador <code>VerifyDateTime</code> como método da <code>VerifyType<code>, Adicionando mais uma camada de proteção ao codigo</li>
     </ul>
 </details>
 

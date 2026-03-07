@@ -15,7 +15,7 @@ public class ViewOption {
         int escolhaOpcao = 0;
         do {
             System.out.printf(
-                    "Opções disponiveis: %n1 - Ver Todas as reservas %n2 - Adicionar mais reservas %n3- Excluir uma reserva%n4 - Sair%n");
+                    "Opções disponiveis: %n1 - Ver Todas as reservas %n2 - Adicionar mais reservas %n3 - Excluir uma reserva%n4 - Sair%n");
             escolhaOpcao = VerifyOption.verify(sc, 0, 4);
 
 
