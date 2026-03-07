@@ -70,7 +70,7 @@
 <details open>
     <summary><b>Versão 4.1.1 - Tratamento de Erro com datas (Atual)</b></summary>
     <ul>
-        <li><b>Verificador de Datas:</b> Implementação de um verificador <code>VerifyDateTime</code> como método da <code>VerifyType<code>, Adicionando mais uma camada de proteção ao codigo</li>
+        <li><b>Verificador de Datas:</b> Implementação de um verificador <code>VerifyDateTime</code> como método da <code>VerifyType</code>, Adicionando mais uma camada de proteção ao codigo</li>
     </ul>
 </details>
 
